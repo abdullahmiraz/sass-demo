@@ -4,6 +4,7 @@ import { FadeIn } from "../motion/fade-in";
 import { Button } from "../ui/button";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import { MovingBorderButton } from "../ui/moving-border";
+import { heroImage } from "@/lib/images";
 
 export function HeroSection() {
   return (
@@ -20,17 +21,17 @@ export function HeroSection() {
                 Muslim Ummah. Achieve your dreams in this world while preparing
                 for the next.
               </p>
-              <div className="flex  justify-center gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
                 <Button
                   size="lg"
-                  className="text-lg px-8 py-6 bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  className="text-base sm:text-lg px-4 sm:px-8 py-4 sm:py-6 bg-secondary text-secondary-foreground hover:bg-secondary/80"
                 >
                   Get access now
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 py-6"
+                  className="text-base sm:text-lg px-4 sm:px-8 py-4 sm:py-6"
                 >
                   Watch video
                 </Button>
@@ -40,16 +41,16 @@ export function HeroSection() {
         }
       >
         <MovingBorderButton
-          duration={19000}
+          duration={9000}
           containerClassName="w-full h-full"
           as="div"
         >
           <Image
-            src="https://images.unsplash.com/photo-1598723106396-f89827f6aa1a"
+            src={heroImage}
             alt="hero"
             height={720}
             width={1400}
-            className="mx-auto rounded-2xl object-cover h-full object-center"
+            className="mx-auto object-cover h-full object-center"
             draggable={false}
           />
         </MovingBorderButton>

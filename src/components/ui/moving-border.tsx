@@ -33,19 +33,13 @@ export function MovingBorderButton({
   return (
     <Component
       className={cn(
-        "relative overflow-hidden bg-transparent p-[4px] text-xl",
+        "relative bg-transparent p-[4px] text-xl",
         containerClassName
       )}
-      style={{
-        borderRadius: borderRadius,
-      }}
       {...otherProps}
     >
-      <div
-        className="absolute inset-0"
-        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
-      >
-        <MovingBorder duration={duration} rx="30%" ry="30%">
+      <div className="absolute inset-0">
+        <MovingBorder duration={duration} rx="16px" ry="16px">
           <div
             className={cn(
               "h-24 w-24 bg-[radial-gradient(#af0_40%,#0f0_60%)] opacity-[1] shadow-lg shadow-secondary/50",
@@ -57,12 +51,9 @@ export function MovingBorderButton({
 
       <div
         className={cn(
-          "relative flex h-full w-full items-center justify-center border-secondary/50 bg-background/95 text-sm text-foreground antialiased backdrop-blur-xl shadow-xl",
+          "relative flex h-full w-full items-center justify-center border-secondary/50 bg-background/95 text-sm text-foreground antialiased backdrop-blur-xl shadow-xl overflow-hidden rounded-2xl",
           className
         )}
-        style={{
-          borderRadius: `calc(${borderRadius} * 0.96)`,
-        }}
       >
         {children}
       </div>

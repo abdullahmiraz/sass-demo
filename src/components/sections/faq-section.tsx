@@ -3,9 +3,12 @@
 import { FadeIn } from "@/components/motion/fade-in";
 import { Stagger } from "@/components/motion/stagger";
 import { StaggerItem } from "@/components/motion/stagger";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -41,12 +44,6 @@ const faqs = [
 ];
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-4xl">
@@ -60,34 +57,25 @@ export function FAQSection() {
         </FadeIn>
 
         <Stagger>
-          <div className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <StaggerItem key={index}>
-                <Card className="bg-card/50 hover:bg-card transition-colors">
-                  <CardHeader
-                    className="cursor-pointer"
-                    onClick={() => toggleFAQ(index)}
-                  >
-                    <CardTitle className="flex items-center justify-between text-left">
-                      <span className="pr-4">{faq.question}</span>
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform ${
-                          openIndex === index ? "rotate-180" : ""
-                        }`}
-                      />
-                    </CardTitle>
-                  </CardHeader>
-                  {openIndex === index && (
-                    <CardContent className="pt-0 pb-6">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </CardContent>
-                  )}
-                </Card>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="bg-card/50 hover:bg-card transition-colors rounded-lg border px-6"
+                >
+                  <AccordionTrigger className="text-left py-6 hover:no-underline">
+                    <span className="pr-4 font-semibold">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
               </StaggerItem>
             ))}
-          </div>
+          </Accordion>
         </Stagger>
       </div>
     </section>

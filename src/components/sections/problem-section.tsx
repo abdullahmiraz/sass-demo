@@ -1,8 +1,8 @@
 "use client";
 
-import { SlideIn } from "@/components/motion/slide-in";
 import { FadeIn } from "@/components/motion/fade-in";
-import { BookOpen } from "lucide-react";
+import { SlideIn } from "@/components/motion/slide-in";
+import { problemImages } from "@/lib/images";
 import Image from "next/image";
 
 export function ProblemSection() {
@@ -18,7 +18,7 @@ export function ProblemSection() {
           <SlideIn direction="left">
             <div className="bg-muted rounded-lg overflow-hidden h-80 relative">
               <Image
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop&crop=center"
+                src={problemImages.selfHelpBooks}
                 alt="Generic self-help books"
                 fill
                 className="object-cover"

@@ -13,7 +13,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-8">
           <div className="text-2xl font-bold bg-secondary text-secondary-foreground w-10 h-10 rounded-lg flex items-center justify-center">
-            UU+
+            U
           </div>
           <div className="hidden md:flex space-x-6">
             <a

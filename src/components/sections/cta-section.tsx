@@ -16,7 +16,7 @@ export function CTASection() {
           </p>
           <Button
             size="lg"
-            className="text-lg px-8 py-6 bg-secondary text-secondary-foreground hover:bg-secondary/80"
+            className="text-base sm:text-lg px-4 sm:px-8 py-4 sm:py-6 bg-secondary text-secondary-foreground hover:bg-secondary/80"
           >
             Get your exclusive membership now
           </Button>
